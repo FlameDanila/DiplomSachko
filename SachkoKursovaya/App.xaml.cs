@@ -15,6 +15,7 @@ namespace SachkoKursovaya
     {
         public static AgenstvoEntities1 db = new AgenstvoEntities1();
         public static string name = "";
+        public static string login = "";
         public static int ApartId = 0;
     }
 }

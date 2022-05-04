@@ -67,6 +67,12 @@
     <Compile Include="Apartments.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppendApparts.xaml.cs">
+      <DependentUpon>AppendApparts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChangesWindow.xaml.cs">
+      <DependentUpon>ChangesWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CheckAparts.xaml.cs">
       <DependentUpon>CheckAparts.xaml</DependentUpon>
     </Compile>
@@ -106,6 +112,14 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Page Include="AppendApparts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CheckAparts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

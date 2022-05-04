@@ -29,6 +29,7 @@ namespace SachkoKursovaya
         public Nullable<int> LivingSpace { get; set; }
         public Nullable<int> TotalSpace { get; set; }
         public Nullable<int> Floor { get; set; }
+        public string ApartmentsPhoto { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Owners> Owners { get; set; }

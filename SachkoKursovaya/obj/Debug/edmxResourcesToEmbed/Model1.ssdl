@@ -13,6 +13,7 @@
     <Property Name="LivingSpace" Type="int" />
     <Property Name="TotalSpace" Type="int" />
     <Property Name="Floor" Type="int" />
+    <Property Name="ApartmentsPhoto" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Owners">
     <Key>

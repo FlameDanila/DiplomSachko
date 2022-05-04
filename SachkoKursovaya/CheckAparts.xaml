@@ -5,23 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SachkoKursovaya"
         mc:Ignorable="d"
-       Title="Авторизация" Height="720" Width="456" MinHeight="720" MinWidth="456" MaxWidth="456" MaxHeight="720" WindowStartupLocation="CenterScreen">
-    <Grid Background="#FF3F72AF" HorizontalAlignment="Left" Width="457">
-        <Border Margin="0,26,0,0" CornerRadius="40" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFDBE2EF" BorderBrush="#FF0F78BB" BorderThickness="1" Width="342" Height="622">
-            <Grid Width="298" Height="474" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,125,0,0">
-                <ListView Background="{x:Null}" BorderBrush="{x:Null}" x:Name="List" Margin="0,0,-5,10" RenderTransformOrigin="0.5,0.5">
+       Title="Инфо" Height="700" Width="600" MinHeight="700" MinWidth="600" MaxWidth="600" MaxHeight="700" WindowStartupLocation="CenterScreen" Icon="/icon.png">
+    <Grid Background="#FF3F72AF" HorizontalAlignment="Center" Width="600" Margin="0,0,0,-6">
+        <Border CornerRadius="40" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFDBE2EF" BorderBrush="#FF0F78BB" BorderThickness="1" Width="518" Height="620">
+            <Grid Width="466" Height="448" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,135,0,0">
+                <ListView Background="{x:Null}" BorderBrush="{x:Null}" x:Name="List" Margin="0,0,-13,0" RenderTransformOrigin="0.5,0.5">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid>
-                                <StackPanel Orientation="Vertical">
-                                    <TextBlock> <Run Text="Количество комнат: " FontSize="30"/> <Run  Text="{Binding RoomsCount}" FontSize="30"/></TextBlock>
-                                    <TextBlock> <Run Text="Метров до метро: " FontSize="30"/> <Run Text="{Binding Metro}" FontSize="30"/></TextBlock>
-                                    <TextBlock> <Run Text="Адрес: " FontSize="30"/> <Run  Text="{Binding Adres}" FontSize="30"/></TextBlock>
-                                    <TextBlock> <Run Text="Стоимость (В рублях): " FontSize="30"/> <Run Text="{Binding Cost}" FontSize="30"/></TextBlock>
-                                    <TextBlock> <Run Text="Город: " FontSize="30"/> <Run Text="{Binding Sity}" FontSize="30"/></TextBlock>
-                                    <TextBlock> <Run Text="Жилое пространство: " FontSize="30"/> <Run Text="{Binding LivingSpace}" FontSize="30"/></TextBlock>
-                                    <TextBlock> <Run Text="Общее пространство: " FontSize="30"/> <Run Text="{Binding TotalSpace}" FontSize="30"/></TextBlock>
-                                    <TextBlock> <Run Text="Этаж: " FontSize="30"/> <Run Text="{Binding Floor}" FontSize="30"/></TextBlock>
+                                <StackPanel Orientation="Vertical" MaxWidth="500">
+                                    <TextBlock TextWrapping="Wrap" Text="Количество комнат: " FontSize="30"> <Run  Text="{Binding RoomsCount}" FontSize="30"/></TextBlock>
+                                    <TextBlock TextWrapping="Wrap" Text="Метров до метро: " FontSize="30"> <Run Text="{Binding Metro}" FontSize="30"/></TextBlock>
+                                    <TextBlock TextWrapping="Wrap" Text="Адрес: " FontSize="30"> <Run  Text="{Binding Adres}" FontSize="30"/></TextBlock>
+                                    <TextBlock TextWrapping="Wrap" Text="Стоимость (В рублях): " FontSize="30"> <Run/> <Run Text="{Binding Cost}" FontSize="30"/></TextBlock>
+                                    <TextBlock TextWrapping="Wrap" Text="Город: " FontSize="30"> <Run/> <Run Text="{Binding City}" FontSize="30"/></TextBlock>
+                                    <TextBlock TextWrapping="Wrap" Text="Жилое пространство: " FontSize="30">  <Run Text="{Binding LivingSpace}" FontSize="30"/></TextBlock>
+                                    <TextBlock TextWrapping="Wrap" Text="Общее пространство: " FontSize="30"> <Run Text="{Binding TotalSpace}" FontSize="30"/></TextBlock>
+                                    <TextBlock TextWrapping="Wrap" Text="Этаж: " FontSize="30"> <Run Text="{Binding Floor}" FontSize="30"/></TextBlock>
                                 </StackPanel>
                             </Grid>
                         </DataTemplate>
@@ -29,6 +29,7 @@
                 </ListView>
             </Grid>
         </Border>
-        <Image HorizontalAlignment="Center" Height="97" Margin="0,40,0,0" VerticalAlignment="Top" Width="95" Source="/icon.png" Stretch="Fill" StretchDirection="Both" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+        <Image HorizontalAlignment="Center" Height="97" Margin="0,54,0,0" VerticalAlignment="Top" Width="96" Source="/icon.png" Stretch="Fill" StretchDirection="Both" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+        <TextBlock Margin="74,485,86,68" TextWrapping="Wrap" x:Name="textAgent" FontSize="30"/>
     </Grid>
 </Window>

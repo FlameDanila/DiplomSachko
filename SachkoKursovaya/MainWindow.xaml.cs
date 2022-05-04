@@ -30,13 +30,14 @@ namespace SachkoKursovaya
 
         private void authButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ComboBoxUser.Text == "Покупатель")
+            if (ComboBoxUser.Text == "Владелец квартиры")
             {
                 List<Owners> OwnersLoginList = App.db.Owners.ToList();
                 
                 var PasswordList = OwnersLoginList.Select(n => n.Password).ToList();
                 var LoginList = OwnersLoginList.Select(n => n.Login).ToList();
                 var NamesList = OwnersLoginList.Select(n => n.FirstName).ToList();
+                var idList = OwnersLoginList.Select(n => n.ApartmentsId).ToList();
 
                 for (int i = 0; i < OwnersLoginList.Count; i++)
                 {
@@ -45,6 +46,8 @@ namespace SachkoKursovaya
                         if (PasswordBox.Text == PasswordList[i] || MyPasswordBox.Password == PasswordList[i])
                         {
                             App.name = NamesList[i];
+                            App.login = LoginList[i];
+                            App.ApartId = Convert.ToInt32(idList[i]);
                             MessageBox.Show("Авторизация прошла успешно");
                             Owner Owner = new Owner();
                             Owner.Show();
@@ -77,10 +80,11 @@ namespace SachkoKursovaya
                         if (PasswordBox.Text == PasswordList[i] || MyPasswordBox.Password == PasswordList[i])
                         {
                             App.name = NamesList[i];
+                            App.login = LoginList[i];
                             MessageBox.Show("Авторизация прошла успешно");
-                            //Owner Owner = new Owner();
-                            //Owner.Show();
-                            //Close();
+                            Owner Owner = new Owner();
+                            Owner.Show();
+                            Close();
                             break;
                         }
                         else

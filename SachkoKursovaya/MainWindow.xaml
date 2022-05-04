@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SachkoKursovaya"
         mc:Ignorable="d"
-      Title="Авторизация" Height="720" Width="1280" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" WindowStartupLocation="CenterScreen">
+      Title="Авторизация" Height="720" Width="1280" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" WindowStartupLocation="CenterScreen" Icon="/icon.png">
     <Grid Background="#FF3F72AF">
         <Border Margin="240,109,240,89" CornerRadius="40" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFDBE2EF" BorderBrush="#FF0F78BB" BorderThickness="1">
             <Grid Width="799" Height="504" VerticalAlignment="Center" Margin="0,0,-1,0" HorizontalAlignment="Center">
@@ -28,7 +28,7 @@
                     <ComboBoxItem Content="Покупатель"/>
                 </ComboBox>
                 <TextBox x:Name="LoginBox" Margin="300,148,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" UndoLimit="1" MaxLength="20"/>
-                <TextBox x:Name="PasswordBox" Margin="0,216,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" TextAlignment="Center" HorizontalAlignment="Center" UndoLimit="1" MaxLength="20" Visibility="Hidden"/>
+                <TextBox x:Name="PasswordBox" Margin="300,237,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" TextAlignment="Center" HorizontalAlignment="Left" UndoLimit="1" MaxLength="20" Visibility="Hidden"/>
                 <TextBlock Text="Логин" Margin="300,113,315,361" FontSize="24" TextAlignment="Center" FontFamily="Calibri"/>
                 <TextBlock Margin="300,195,315,279" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Пароль"/></TextBlock>
                 <PasswordBox x:Name="MyPasswordBox" Margin="300,237,0,0" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" MaxLength="20"/>

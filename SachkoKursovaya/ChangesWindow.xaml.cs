@@ -15,29 +15,29 @@ using System.Windows.Shapes;
 namespace SachkoKursovaya
 {
     /// <summary>
-    /// Логика взаимодействия для CheckAparts.xaml
+    /// Логика взаимодействия для ChangesWindow.xaml
     /// </summary>
-    public partial class CheckAparts : Window
+    public partial class ChangesWindow : Window
     {
-        public CheckAparts()
+        public ChangesWindow()
         {
             InitializeComponent();
             Update();
-
-            List<Apartments> apartments = App.db.Apartments.Where(n => n.id == App.ApartId).ToList();
-            int list = 0;
-            foreach (var i in apartments)
-            {
-                list = Convert.ToInt32(i.Cost);
-            }
-
-            textAgent.Text = "Итоговая сумма, вместе с комиссией риелтора: " + list * 1.005;
         }
+
         public void Update()
         {
             List.ItemsSource = App.db.Apartments.Where(n => n.id == App.ApartId).ToList();
         }
-        public void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Owner window = new Owner();
+            window.Show();
+            Close();
+        }
+
+        private void Plus_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             AppendApparts append = new AppendApparts();
             append.Show();

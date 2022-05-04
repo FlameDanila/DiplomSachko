@@ -27,3 +27,7 @@ C:\Users\Danila\source\repos\SachkoKursovaya\SachkoKursovaya\obj\Debug\Registrat
 C:\Users\Danila\source\repos\SachkoKursovaya\SachkoKursovaya\obj\Debug\Registration.baml
 C:\Users\Danila\source\repos\SachkoKursovaya\SachkoKursovaya\obj\Debug\CheckAparts.g.cs
 C:\Users\Danila\source\repos\SachkoKursovaya\SachkoKursovaya\obj\Debug\CheckAparts.baml
+C:\Users\Danila\source\repos\SachkoKursovaya\SachkoKursovaya\obj\Debug\ChangesWindow.g.cs
+C:\Users\Danila\source\repos\SachkoKursovaya\SachkoKursovaya\obj\Debug\ChangesWindow.baml
+C:\Users\Danila\source\repos\SachkoKursovaya\SachkoKursovaya\obj\Debug\AppendApparts.g.cs
+C:\Users\Danila\source\repos\SachkoKursovaya\SachkoKursovaya\obj\Debug\AppendApparts.baml

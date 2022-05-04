@@ -18,6 +18,7 @@
           <Property Name="LivingSpace" Type="int" />
           <Property Name="TotalSpace" Type="int" />
           <Property Name="Floor" Type="int" />
+          <Property Name="ApartmentsPhoto" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Owners">
           <Key>
@@ -130,6 +131,7 @@
           <Property Name="TotalSpace" Type="Int32" />
           <Property Name="Floor" Type="Int32" />
           <NavigationProperty Name="Owners" Relationship="Self.FK_Owners_Apartments" FromRole="Apartments" ToRole="Owners" />
+          <Property Name="ApartmentsPhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Owners">
           <Key>
@@ -244,6 +246,7 @@
           <EntitySetMapping Name="Apartments">
             <EntityTypeMapping TypeName="AgenstvoModel.Apartments">
               <MappingFragment StoreEntitySet="Apartments">
+                <ScalarProperty Name="ApartmentsPhoto" ColumnName="ApartmentsPhoto" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="RoomsCount" ColumnName="RoomsCount" />
                 <ScalarProperty Name="Metro" ColumnName="Metro" />
