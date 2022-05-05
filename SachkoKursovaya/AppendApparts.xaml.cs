@@ -27,7 +27,7 @@ namespace SachkoKursovaya
         private void regButton_Click(object sender, RoutedEventArgs e)
         {
             Apartments apartments = new Apartments();
-            if (RoomsBox.Text == "" || TotakSpaceBox.Text == "" || LivingSpaceBox.Text == "" || AdresBox.Text == "" || FloorBox.Text == "" || Metro.Text == "" || CostBox.Text == "")
+            if (RoomsBox.Text == "" || TotakSpaceBox.Text == "" || LivingSpaceBox.Text == "" || AdresBox.Text == "" || FloorBox.Text == "" || Metro.Text == "" || CostBox.Text == "" || CityBox.Text == "")
             { MessageBox.Show("У вас остались незаполненые поля"); }
             else
             {

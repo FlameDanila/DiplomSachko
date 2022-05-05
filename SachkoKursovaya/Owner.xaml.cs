@@ -76,7 +76,7 @@ namespace SachkoKursovaya
                 var listBook = App.db.Apartments.Where(Name => Name.Adres.Contains(f)).ToList();
                 List.ItemsSource = listBook;
             }
-            if (Combo.Text == "Стоимость меньше")
+            if (Combo.Text == "Стоимость больше")
             {
                 if (Search.Text != "")
                 {
@@ -92,7 +92,7 @@ namespace SachkoKursovaya
                     }
                 }
             }
-            if (Combo.Text == "Стоимость больше")
+            if (Combo.Text == "Стоимость меньше")
             {
                 if (Search.Text != "")
                 {

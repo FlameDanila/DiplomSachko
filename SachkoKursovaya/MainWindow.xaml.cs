@@ -62,7 +62,7 @@ namespace SachkoKursovaya
                             break;
                         }
                     }
-                    else { MessageBox.Show("Такой логин не найден"); break; }
+                    else { }
                 }
             }
             else 
@@ -95,7 +95,7 @@ namespace SachkoKursovaya
                             break;
                         }
                     }
-                    else { MessageBox.Show("Такой логин не найден"); break; }
+                    else { }
                 }
             }
         }

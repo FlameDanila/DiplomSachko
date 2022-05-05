@@ -59,7 +59,7 @@ namespace SachkoKursovaya
                         }
                         else
                         {
-                            Purchasers purchasers = new Purchasers()
+                            Owners purchasers = new Owners()
                             {
                                 FirstName = FirstNameBox.Text,
                                 LastName = LastNameBox.Text,
@@ -71,7 +71,7 @@ namespace SachkoKursovaya
                                 Gender = FloorCombo.Text
                             };
 
-                            App.db.Purchasers.Add(purchasers);
+                            App.db.Owners.Add(purchasers);
                             App.db.SaveChanges();
                             MessageBox.Show("Пользователь " + FirstNameBox.Text + " добавлен");
                         }
