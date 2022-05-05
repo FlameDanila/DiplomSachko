@@ -32,7 +32,7 @@ namespace SachkoKursovaya
             else
             {
                 apartments.RoomsCount = Convert.ToInt32(RoomsBox.Text);
-                apartments.TotalSpace = Convert.ToInt32(TotakSpaceBox);
+                apartments.TotalSpace = Convert.ToInt32(TotakSpaceBox.Text);
                 apartments.LivingSpace = Convert.ToInt32(LivingSpaceBox.Text);
                 apartments.Adres = AdresBox.Text;
                 apartments.Floor = Convert.ToInt32(FloorBox.Text);
