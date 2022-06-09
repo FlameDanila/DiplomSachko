@@ -5,32 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SachkoKursovaya"
         mc:Ignorable="d"
-        Title="Добавление" Height="520" Width="1064" MinHeight="520" MinWidth="1064" MaxWidth="1064" MaxHeight="520" WindowStartupLocation="CenterScreen" Icon="/icon.png">
+        Title="Добавление" Height="520" Width="502" MinHeight="520" MinWidth="100" MaxWidth="1064" MaxHeight="520" WindowStartupLocation="CenterScreen" Icon="/icon.png">
     <Grid Background="#FF3F72AF">
-        <Border CornerRadius="40" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFDBE2EF" BorderBrush="#FF0F78BB" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Width="908" Height="444">
+        <Border CornerRadius="40" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFDBE2EF" BorderBrush="#FF0F78BB" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Width="467" Height="444">
             <Grid Width="799" Height="504" VerticalAlignment="Center" Margin="0,0,-1,0" HorizontalAlignment="Center">
-                <Button x:Name="regButton" Margin="0,402,0,0" Content="Добавить" FontSize="20" Foreground="White" Background="#FF112D4E" MinHeight="40" MinWidth="169"  Width="169" HorizontalAlignment="Center" Height="47" VerticalAlignment="Top" Click="regButton_Click">
+                <Button x:Name="regButton" Margin="0,410,0,0" Content="Добавить" FontSize="20" Foreground="White" Background="#FF112D4E" MinHeight="40" MinWidth="169"  Width="169" HorizontalAlignment="Center" Height="47" VerticalAlignment="Top" Click="regButton_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="7"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <TextBox x:Name="CityBox" Margin="25,111,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" UndoLimit="1" MaxLength="20" />
-                <TextBox x:Name="AdresBox" Margin="25,200,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" TextAlignment="Center" HorizontalAlignment="Left" UndoLimit="1" MaxLength="20"/>
-                <TextBlock Margin="25,76,589,398" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Город"/></TextBlock>
-                <TextBlock Margin="25,165,589,309" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Адрес"/></TextBlock>
-                <TextBlock x:Name="Metro1" Margin="25,256,589,218" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Метров до метро"/></TextBlock>
-                <TextBox x:Name="Metro" Margin="25,291,0,0" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" MaxLength="20"/>
-                <TextBox x:Name="RoomsBox" Margin="0,160,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Center" UndoLimit="1" MaxLength="20"/>
-                <TextBox x:Name="LivingSpaceBox" Margin="0,249,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" TextAlignment="Center" HorizontalAlignment="Center" UndoLimit="1" MaxLength="20"/>
-                <TextBlock Margin="293,125,296,349" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Количество комнат"/></TextBlock>
-                <TextBlock Margin="287,214,286,260" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Жилое пространство"/></TextBlock>
-                <TextBlock Margin="566,256,6,218" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Общее пространство"/></TextBlock>
-                <TextBox x:Name="TotakSpaceBox" Margin="586,291,0,0" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" MaxLength="20" TextAlignment="Center"/>
-                <TextBlock Margin="586,76,28,398" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Этаж"/></TextBlock>
-                <TextBlock Margin="586,165,28,309" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Стоимость"/></TextBlock>
-                <TextBox x:Name="CostBox" Margin="586,200,0,0" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" MaxLength="20" TextAlignment="Center"/>
+                <ComboBox x:Name="CityBox" IsTextSearchEnabled="True" Margin="198,95,0,0" Text="" FontSize="26" FontFamily="Calibri" MinWidth="185" Width="190" MaxWidth="300" Height="37" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="Black" HorizontalAlignment="Left"/>
+                <TextBox x:Name="AdresBox" Margin="198,184,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="190" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" TextAlignment="Center" HorizontalAlignment="Left" UndoLimit="1" MaxLength="20"/>
+                <TextBlock Margin="218,60,435,414" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Город"/></TextBlock>
+                <TextBlock Margin="198,149,416,325" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Адрес"/></TextBlock>
+                <TextBlock x:Name="Metro1" Margin="198,240,416,234" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Площадь"/></TextBlock>
+                <TextBox x:Name="TotalSpaceBox" Margin="198,275,0,0" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="190" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" MaxLength="20" PreviewTextInput="DigitsTextInput"/>
+                <TextBox x:Name="RoomsBox" Margin="412,275,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" UndoLimit="1" MaxLength="20"  PreviewTextInput="DigitsTextInput"/>
+                <TextBlock Margin="400,240,189,234" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Количество комнат"/></TextBlock>
+                <TextBlock Margin="412,60,202,414" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Этаж"/></TextBlock>
+                <TextBlock Margin="412,149,202,325" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Стоимость"/></TextBlock>
+                <TextBox x:Name="CostBox" Margin="412,184,0,0" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" MaxLength="20" TextAlignment="Center" PreviewTextInput="DigitsTextInput"/>
                 <TextBlock x:Name="Error" Visibility="Hidden" HorizontalAlignment="Left" Margin="215,108,0,0" TextWrapping="Wrap" Text="ꜝ" VerticalAlignment="Top" FontSize="50" Width="30" Height="40">
                     <TextBlock.ToolTip>
                         <ToolTip>
@@ -38,9 +34,16 @@
                         </ToolTip>
                     </TextBlock.ToolTip>
                 </TextBlock>
-                <TextBox x:Name="FloorBox" Margin="586,111,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" UndoLimit="1" MaxLength="20"/>
+                <TextBox x:Name="FloorBox" Margin="412,95,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" UndoLimit="1" MaxLength="20" PreviewTextInput="DigitsTextInput"/>
+                <Button x:Name="pictureButton" Margin="0,327,0,0" Content="🏡" FontSize="35" Foreground="White" Background="#FF112D4E" Width="64" HorizontalAlignment="Center" Height="63" VerticalAlignment="Top" Click="pictureButton_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Image HorizontalAlignment="Left" Height="48" Margin="376,38,0,0" VerticalAlignment="Top" Width="48" Source="/icon.png" Stretch="Fill" StretchDirection="Both" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
             </Grid>
         </Border>
-        <Image HorizontalAlignment="Left" Height="49" Margin="914,45,0,0" VerticalAlignment="Top" Width="48" Source="/icon.png" Stretch="Fill" StretchDirection="Both" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
     </Grid>
 </Window>

@@ -20,8 +20,8 @@
                                     <TextBlock TextWrapping="Wrap" Text="Стоимость (В рублях): " FontSize="30"> <Run/> <Run Text="{Binding Cost}" FontSize="30"/></TextBlock>
                                     <TextBlock TextWrapping="Wrap" Text="Город: " FontSize="30"> <Run/> <Run Text="{Binding City}" FontSize="30"/></TextBlock>
                                     <TextBlock TextWrapping="Wrap" Text="Жилое пространство: " FontSize="30">  <Run Text="{Binding LivingSpace}" FontSize="30"/></TextBlock>
-                                    <TextBlock TextWrapping="Wrap" Text="Общее пространство: " FontSize="30"> <Run Text="{Binding TotalSpace}" FontSize="30"/></TextBlock>
                                     <TextBlock TextWrapping="Wrap" Text="Этаж: " FontSize="30"> <Run Text="{Binding Floor}" FontSize="30"/></TextBlock>
+                                    <TextBlock TextWrapping="Wrap" Text="Общее пространство: " FontSize="30"> <Run Text="{Binding TotalSpace}" FontSize="30"/></TextBlock>
                                 </StackPanel>
                             </Grid>
                         </DataTemplate>

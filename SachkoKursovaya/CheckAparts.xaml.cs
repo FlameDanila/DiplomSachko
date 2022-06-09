@@ -24,7 +24,7 @@ namespace SachkoKursovaya
             InitializeComponent();
             Update();
 
-            List<Apartments> apartments = App.db.Apartments.Where(n => n.id == App.ApartId).ToList();
+            List<Apartments> apartments = App.db.Apartments.Where(n => n.OwnerId == App.userId).ToList();
             int list = 0;
             foreach (var i in apartments)
             {
@@ -35,7 +35,7 @@ namespace SachkoKursovaya
         }
         public void Update()
         {
-            List.ItemsSource = App.db.Apartments.Where(n => n.id == App.ApartId).ToList();
+            List.ItemsSource = App.db.Apartments.Where(n => n.id == App.userId).ToList();
         }
         public void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

@@ -36,8 +36,7 @@ namespace SachkoKursovaya
                 
                 var PasswordList = OwnersLoginList.Select(n => n.Password).ToList();
                 var LoginList = OwnersLoginList.Select(n => n.Login).ToList();
-                var NamesList = OwnersLoginList.Select(n => n.FirstName).ToList();
-                var idList = OwnersLoginList.Select(n => n.ApartmentsId).ToList();
+                var NamesList = OwnersLoginList.Select(n => n.Name).ToList();
 
                 for (int i = 0; i < OwnersLoginList.Count; i++)
                 {
@@ -47,7 +46,6 @@ namespace SachkoKursovaya
                         {
                             App.name = NamesList[i];
                             App.login = LoginList[i];
-                            App.ApartId = Convert.ToInt32(idList[i]);
                             MessageBox.Show("Авторизация прошла успешно");
                             Owner Owner = new Owner();
                             Owner.Show();
@@ -71,7 +69,7 @@ namespace SachkoKursovaya
 
                 var PasswordList = PurchasersLoginList.Select(n => n.Password).ToList();
                 var LoginList = PurchasersLoginList.Select(n => n.Login).ToList();
-                var NamesList = PurchasersLoginList.Select(n => n.FirstName).ToList();
+                var NamesList = PurchasersLoginList.Select(n => n.Name).ToList();
 
                 for (int i = 0; i < PurchasersLoginList.Count; i++)
                 {

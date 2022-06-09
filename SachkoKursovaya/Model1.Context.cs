@@ -27,10 +27,10 @@ namespace SachkoKursovaya
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Apartments> Apartments { get; set; }
         public virtual DbSet<Owners> Owners { get; set; }
         public virtual DbSet<Purchasers> Purchasers { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

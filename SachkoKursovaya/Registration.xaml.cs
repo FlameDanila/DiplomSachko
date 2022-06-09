@@ -31,11 +31,11 @@ namespace SachkoKursovaya
             { MessageBox.Show("Этот логин уже занят, придумайте другой"); }
             else
             {
-                if (FirstNameBox.Text == "" || LastNameBox.Text == "" || MiddleNameBox.Text == "" || PhoneBox.Text == "" || PasswordBox.Text == "" || LoginBox.Text == "" || PasportBox.Text == "")
+                if (FirstNameBox.Text == "" || LastNameBox.Text == "" || MiddleNameBox.Text == "" || PhoneBox.Text == "" || PasswordBox.Password == null || LoginBox.Text == "")
                 { MessageBox.Show("У вас остались незаполненые поля"); }
                 else
                 {
-                    if (PasswordBox.Text != RepeatPassBox.Text)
+                    if (PasswordBox.Password != RepeatPassBox.Password)
                     { MessageBox.Show("Пароли должны совпадать!"); }
                     else
                     {
@@ -43,13 +43,10 @@ namespace SachkoKursovaya
                         {
                             Purchasers purchasers = new Purchasers()
                             {
-                                FirstName = FirstNameBox.Text,
-                                LastName = LastNameBox.Text,
-                                MiddleName = MiddleNameBox.Text,
+                                Name = FirstNameBox.Text.Replace(" ", "") + " " + LastNameBox.Text.Replace(" ", "") + " " + MiddleNameBox.Text.Replace(" ", ""),
                                 Phone = PhoneBox.Text,
-                                Passport = PasportBox.Text,
                                 Login = LoginBox.Text,
-                                Password = PasswordBox.Text,
+                                Password = PasswordBox.Password,
                                 Gender = FloorCombo.Text
                             };
 
@@ -61,13 +58,10 @@ namespace SachkoKursovaya
                         {
                             Owners purchasers = new Owners()
                             {
-                                FirstName = FirstNameBox.Text,
-                                LastName = LastNameBox.Text,
-                                MiddleName = MiddleNameBox.Text,
+                                Name = FirstNameBox.Text.Replace(" ", "") + " " + LastNameBox.Text.Replace(" ", "") + " " + MiddleNameBox.Text.Replace(" ", ""),
                                 Phone = PhoneBox.Text,
-                                Passport = PasportBox.Text,
                                 Login = LoginBox.Text,
-                                Password = PasswordBox.Text,
+                                Password = PasswordBox.Password,
                                 Gender = FloorCombo.Text
                             };
 

@@ -6,41 +6,32 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RoomsCount" Type="int" />
-    <Property Name="Metro" Type="int" />
     <Property Name="Adres" Type="nvarchar" MaxLength="100" />
     <Property Name="Cost" Type="int" />
     <Property Name="City" Type="nvarchar" MaxLength="50" />
     <Property Name="LivingSpace" Type="int" />
-    <Property Name="TotalSpace" Type="int" />
     <Property Name="Floor" Type="int" />
     <Property Name="ApartmentsPhoto" Type="nvarchar" MaxLength="100" />
+    <Property Name="OwnerId" Type="int" />
   </EntityType>
   <EntityType Name="Owners">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
-    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
-    <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
-    <Property Name="Gender" Type="nchar" MaxLength="10" />
-    <Property Name="Passport" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Login" Type="nvarchar" MaxLength="50" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" />
-    <Property Name="ApartmentsId" Type="int" />
     <Property Name="Phone" Type="nvarchar" MaxLength="50" />
-    <Property Name="ApartmentsPhoto" Type="nvarchar" MaxLength="100" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Purchasers">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
-    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
-    <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Gender" Type="nchar" MaxLength="10" />
-    <Property Name="Passport" Type="nchar" MaxLength="10" />
     <Property Name="Phone" Type="nvarchar" MaxLength="50" />
     <Property Name="Login" Type="nvarchar" MaxLength="50" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" />
@@ -55,15 +46,15 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
-  <Association Name="FK_Owners_Apartments">
-    <End Role="Apartments" Type="Self.Apartments" Multiplicity="0..1" />
-    <End Role="Owners" Type="Self.Owners" Multiplicity="*" />
+  <Association Name="FK_Apartments_Owners">
+    <End Role="Owners" Type="Self.Owners" Multiplicity="0..1" />
+    <End Role="Apartments" Type="Self.Apartments" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Apartments">
+      <Principal Role="Owners">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Owners">
-        <PropertyRef Name="ApartmentsId" />
+      <Dependent Role="Apartments">
+        <PropertyRef Name="OwnerId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -103,9 +94,9 @@
     <EntitySet Name="Owners" EntityType="Self.Owners" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Purchasers" EntityType="Self.Purchasers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Owners_Apartments" Association="Self.FK_Owners_Apartments">
-      <End Role="Apartments" EntitySet="Apartments" />
+    <AssociationSet Name="FK_Apartments_Owners" Association="Self.FK_Apartments_Owners">
       <End Role="Owners" EntitySet="Owners" />
+      <End Role="Apartments" EntitySet="Apartments" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

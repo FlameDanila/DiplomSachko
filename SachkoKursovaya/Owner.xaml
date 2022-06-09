@@ -19,14 +19,14 @@
                                             <TextBlock Text="{Binding Adres}" FontSize="40"/>
                                         </StackPanel>
                                         <Grid Width="30"/>
-                                        <StackPanel Orientation="Horizontal">
+                                        <StackPanel Orientation="Horizontal" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
                                             <TextBlock Text="{Binding Cost}" FontSize="40" Width="130"/>
                                             <Grid Width="60"/>
                                             <TextBlock Text="{Binding City}" FontSize="40" Width="150"/>
                                             <Grid Width="40"/>
                                             <TextBlock Text="{Binding Floor}" FontSize="40" Width="50"/>
                                             <Grid Width="130"/>
-                                            <Image Source="{Binding ApartmentsPhoto}" Stretch="Fill" MaxHeight="150" MaxWidth="150" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown"/>
+                                            <Image Source="{Binding ApartmentsPhoto}" Stretch="Fill" MaxHeight="150" MaxWidth="150"/>
                                         </StackPanel>
                                     </StackPanel>
                                 </Grid>

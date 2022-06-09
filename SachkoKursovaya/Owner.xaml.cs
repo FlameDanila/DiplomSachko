@@ -23,12 +23,14 @@ namespace SachkoKursovaya
         {
             InitializeComponent();
             Update();
-            NameText.Text = "Здраствуйте, " + App.name;
+            string[] name = App.name.Split(' ');
+            NameText.Text = "Здраствуйте, " + name[1];
 
-            List<Owners> PurchasersLoginList = App.db.Owners.ToList();
-            var SecondLoginList = PurchasersLoginList.Select(n => n.Login).ToList();
+            List<Owners> OwnersLoginList = App.db.Owners.ToList();
 
-            if (SecondLoginList.Contains(App.login))
+            var LoginList = OwnersLoginList.Select(n => n.Login).ToList();
+
+            if (LoginList.Contains(App.login))
             {
                 Changes.Visibility = Visibility.Visible;
             }
@@ -55,10 +57,10 @@ namespace SachkoKursovaya
 
         private void StackPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            var button = sender as Image;
+            var button = sender as StackPanel;
             var body = button.DataContext as Apartments;
 
-            App.ApartId = Convert.ToInt32(body.id);
+            App.userId = Convert.ToInt32(body.id);
 
             CheckAparts checkAparts = new CheckAparts();
             checkAparts.Show();
@@ -70,13 +72,13 @@ namespace SachkoKursovaya
             {
                 Update();
             }
-            if (Combo.Text == "Адрес")
+            else if (Combo.Text == "Адрес")
             {
                 string f = Search.Text;
                 var listBook = App.db.Apartments.Where(Name => Name.Adres.Contains(f)).ToList();
                 List.ItemsSource = listBook;
             }
-            if (Combo.Text == "Стоимость больше")
+            else if (Combo.Text == "Стоимость больше")
             {
                 if (Search.Text != "")
                 {
@@ -92,7 +94,7 @@ namespace SachkoKursovaya
                     }
                 }
             }
-            if (Combo.Text == "Стоимость меньше")
+            else if (Combo.Text == "Стоимость меньше")
             {
                 if (Search.Text != "")
                 {
@@ -108,29 +110,13 @@ namespace SachkoKursovaya
                     }
                 }
             }
-            if (Combo.Text == "Город")
+            else if (Combo.Text == "Город")
             {
                 string f = Search.Text;
                 var listBook = App.db.Apartments.Where(date => date.City.Contains(f)).ToList();
                 List.ItemsSource = listBook;
             }
-            if (Combo.Text == "Этаж")
-            {
-                if (Search.Text != "")
-                {
-                    try
-                    {
-                        int f = Convert.ToInt32(Search.Text);
-                        var listBook = App.db.Apartments.Where(m => m.Floor == f).ToList();
-                        List.ItemsSource = listBook;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Введите число");
-                    }
-                }
-            }
-            if (Combo.Text == "Метров до метро")
+            else if (Combo.Text == "Этаж")
             {
                 if (Search.Text != "")
                 {

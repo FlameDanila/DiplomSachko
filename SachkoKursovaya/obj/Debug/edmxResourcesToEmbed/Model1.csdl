@@ -1,52 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AgenstvoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Apartments">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RoomsCount" Type="Int32" />
-    <Property Name="Metro" Type="Int32" />
-    <Property Name="Adres" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Cost" Type="Int32" />
-    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="LivingSpace" Type="Int32" />
-    <Property Name="TotalSpace" Type="Int32" />
-    <Property Name="Floor" Type="Int32" />
-    <NavigationProperty Name="Owners" Relationship="Self.FK_Owners_Apartments" FromRole="Apartments" ToRole="Owners" />
-    <Property Name="ApartmentsPhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="Owners">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="Passport" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ApartmentsId" Type="Int32" />
-    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Apartments" Relationship="Self.FK_Owners_Apartments" FromRole="Owners" ToRole="Apartments" />
-    <Property Name="ApartmentsPhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="Purchasers">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="Passport" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -57,27 +10,8 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <Association Name="FK_Owners_Apartments">
-    <End Role="Apartments" Type="Self.Apartments" Multiplicity="0..1" />
-    <End Role="Owners" Type="Self.Owners" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Apartments">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Owners">
-        <PropertyRef Name="ApartmentsId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="AgenstvoEntities1" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Apartments" EntityType="Self.Apartments" />
-    <EntitySet Name="Owners" EntityType="Self.Owners" />
-    <EntitySet Name="Purchasers" EntityType="Self.Purchasers" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-    <AssociationSet Name="FK_Owners_Apartments" Association="Self.FK_Owners_Apartments">
-      <End Role="Apartments" EntitySet="Apartments" />
-      <End Role="Owners" EntitySet="Owners" />
-    </AssociationSet>
     <FunctionImport Name="sp_alterdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -108,6 +42,13 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="Apartments" EntityType="AgenstvoModel.Apartments" />
+    <EntitySet Name="Owners" EntityType="AgenstvoModel.Owners" />
+    <EntitySet Name="Purchasers" EntityType="AgenstvoModel.Purchasers" />
+    <AssociationSet Name="FK_Apartments_Owners" Association="AgenstvoModel.FK_Apartments_Owners">
+      <End Role="Owners" EntitySet="Owners" />
+      <End Role="Apartments" EntitySet="Apartments" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -120,4 +61,54 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <EntityType Name="Apartments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoomsCount" Type="Int32" />
+    <Property Name="Adres" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Int32" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LivingSpace" Type="Int32" />
+    <Property Name="Floor" Type="Int32" />
+    <Property Name="ApartmentsPhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OwnerId" Type="Int32" />
+    <NavigationProperty Name="Owners" Relationship="AgenstvoModel.FK_Apartments_Owners" FromRole="Apartments" ToRole="Owners" />
+  </EntityType>
+  <EntityType Name="Owners">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Apartments" Relationship="AgenstvoModel.FK_Apartments_Owners" FromRole="Owners" ToRole="Apartments" />
+  </EntityType>
+  <EntityType Name="Purchasers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Apartments_Owners">
+    <End Type="AgenstvoModel.Owners" Role="Owners" Multiplicity="0..1" />
+    <End Type="AgenstvoModel.Apartments" Role="Apartments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Owners">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Apartments">
+        <PropertyRef Name="OwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

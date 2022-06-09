@@ -21,23 +21,21 @@
                     <ComboBoxItem Content="Покупатель"/>
                 </ComboBox>
                 <TextBox x:Name="LoginBox" Margin="25,111,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" UndoLimit="1" MaxLength="20" TextChanged="LoginBox_TextChanged"/>
-                <TextBox x:Name="PasswordBox" Margin="25,200,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" TextAlignment="Center" HorizontalAlignment="Left" UndoLimit="1" MaxLength="20"/>
+                <PasswordBox x:Name="PasswordBox" Margin="25,200,0,0" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" MaxLength="20"/>
                 <TextBlock Text="Логин" Margin="25,76,589,398" FontSize="24" TextAlignment="Center" FontFamily="Calibri"/>
                 <TextBlock Margin="25,165,589,309" FontSize="24" TextAlignment="Center" FontFamily="Calibri" Text="Пароль"/>
                 <TextBlock Margin="25,256,589,218" FontSize="24" TextAlignment="Center" FontFamily="Calibri" Text="Повторите пароль"/>
-                <TextBox x:Name="RepeatPassBox" Margin="25,291,0,0" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" MaxLength="20" TextAlignment="Center"/>
-                <TextBox x:Name="LastNameBox" Margin="0,111,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Center" UndoLimit="1" MaxLength="20" PreviewTextInput="PreviewTextInput"/>
-                <TextBox x:Name="FirstNameBox" Margin="0,200,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" TextAlignment="Center" HorizontalAlignment="Center" UndoLimit="1" MaxLength="20" PreviewTextInput="PreviewTextInput"/>
-                <TextBlock Text="Фамилия" Margin="307,76,307,398" FontSize="24" TextAlignment="Center" FontFamily="Calibri"/>
-                <TextBlock Margin="307,165,307,309" FontSize="24" TextAlignment="Center" FontFamily="Calibri" Text="Имя"/>
-                <TextBlock Margin="307,256,307,218" FontSize="24" TextAlignment="Center" FontFamily="Calibri" Text="Отчество"/>
-                <TextBox x:Name="MiddleNameBox" Margin="0,291,0,0" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Center" MaxLength="20" TextAlignment="Center" PreviewTextInput="PreviewTextInput"/>
-                <TextBox x:Name="PasportBox" Margin="586,200,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" TextAlignment="Center" HorizontalAlignment="Left" UndoLimit="1" MaxLength="20" PreviewTextInput="DigitsTextInput"/>
-                <TextBlock Margin="586,76,28,398" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Пол"/></TextBlock>
-                <TextBlock Margin="586,153,28,309" FontSize="18" TextAlignment="Center" FontFamily="Calibri" TextWrapping="Wrap" FontWeight="Bold"><Run Language="ru-ru" Text="Серия и номер паспорта (слитно)" /></TextBlock>
-                <TextBlock Margin="586,256,28,218" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Номер телефона"/></TextBlock>
-                <TextBox x:Name="PhoneBox" Margin="586,291,0,0" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" MaxLength="20" TextAlignment="Center" PreviewTextInput="DigitsTextInput"/>
-                <ComboBox x:Name="FloorCombo" HorizontalAlignment="Left" Margin="586,111,0,0" VerticalAlignment="Top" Width="185" Height="37" FontSize="20">
+                <PasswordBox x:Name="RepeatPassBox" Margin="25,291,0,0" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" MaxLength="20"/>
+                <TextBox x:Name="LastNameBox" Margin="567,111,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="38" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" UndoLimit="1" MaxLength="20" PreviewTextInput="PreviewTextInput"/>
+                <TextBox x:Name="FirstNameBox" Margin="567,201,0,0" Text="" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" TextAlignment="Center" HorizontalAlignment="Left" UndoLimit="1" MaxLength="20" PreviewTextInput="PreviewTextInput"/>
+                <TextBlock Text="Фамилия" Margin="567,77,47,397" FontSize="24" TextAlignment="Center" FontFamily="Calibri"/>
+                <TextBlock Margin="567,166,47,308" FontSize="24" TextAlignment="Center" FontFamily="Calibri" Text="Имя"/>
+                <TextBlock Margin="567,257,47,217" FontSize="24" TextAlignment="Center" FontFamily="Calibri" Text="Отчество"/>
+                <TextBox x:Name="MiddleNameBox" Margin="567,291,0,0" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="38" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" MaxLength="20" TextAlignment="Center" PreviewTextInput="PreviewTextInput"/>
+                <TextBlock Margin="307,126,307,348" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Пол"/></TextBlock>
+                <TextBlock Margin="307,221,307,253" FontSize="24" TextAlignment="Center" FontFamily="Calibri"><Run Language="ru-ru" Text="Номер телефона"/></TextBlock>
+                <TextBox x:Name="PhoneBox" Margin="0,256,0,0" FontSize="30" FontFamily="Calibri" MinWidth="185" Width="auto" MaxWidth="300" Height="37" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Center" MaxLength="20" TextAlignment="Center" PreviewTextInput="DigitsTextInput"/>
+                <ComboBox x:Name="FloorCombo" HorizontalAlignment="Center" Margin="0,161,0,0" VerticalAlignment="Top" Width="185" Height="37" FontSize="20">
                     <ComboBoxItem Content="Мужской" IsSelected="True" FontSize="20"/>
                     <ComboBoxItem Content="Женский" FontSize="20"/>
                 </ComboBox>
@@ -50,6 +48,6 @@
                 </TextBlock>
             </Grid>
         </Border>
-        <Image HorizontalAlignment="Left" Height="49" Margin="914,45,0,0" VerticalAlignment="Top" Width="48" Source="/icon.png" Stretch="Fill" StretchDirection="Both" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+        <Image HorizontalAlignment="Center" Height="61" Margin="0,44,0,0" VerticalAlignment="Top" Width="60" Source="/icon.png" Stretch="Fill" StretchDirection="Both" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
     </Grid>
 </Window>

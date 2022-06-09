@@ -14,18 +14,20 @@ namespace SachkoKursovaya
     
     public partial class Owners
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Owners()
+        {
+            this.Apartments = new HashSet<Apartments>();
+        }
+    
         public int id { get; set; }
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
-        public string MiddleName { get; set; }
-        public string Gender { get; set; }
-        public string Passport { get; set; }
+        public string Name { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public Nullable<int> ApartmentsId { get; set; }
         public string Phone { get; set; }
-        public string ApartmentsPhoto { get; set; }
+        public string Gender { get; set; }
     
-        public virtual Apartments Apartments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Apartments> Apartments { get; set; }
     }
 }

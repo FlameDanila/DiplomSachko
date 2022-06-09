@@ -5,12 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="8c0cab6129394ca4833d43ca54de70fc" Name="Diagram1">
-        <EntityTypeShape EntityType="AgenstvoModel.Apartments" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AgenstvoModel.Owners" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="AgenstvoModel.Purchasers" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AgenstvoModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
-        <AssociationConnector Association="AgenstvoModel.FK_Owners_Apartments" ManuallyRouted="false" />
-      </Diagram>
+        <EntityTypeShape EntityType="AgenstvoModel.Apartments" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="AgenstvoModel.Owners" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="AgenstvoModel.Purchasers" Width="1.5" PointX="3.75" PointY="4.75" />
+        <AssociationConnector Association="AgenstvoModel.FK_Apartments_Owners" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

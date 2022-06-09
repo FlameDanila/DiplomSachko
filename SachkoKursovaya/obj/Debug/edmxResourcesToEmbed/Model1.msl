@@ -1,54 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Хранилище AgenstvoModelContainer" CdmEntityContainer="AgenstvoEntities1">
-    <EntitySetMapping Name="Apartments">
-      <EntityTypeMapping TypeName="AgenstvoModel.Apartments">
-        <MappingFragment StoreEntitySet="Apartments">
-          <ScalarProperty Name="ApartmentsPhoto" ColumnName="ApartmentsPhoto" />
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="RoomsCount" ColumnName="RoomsCount" />
-          <ScalarProperty Name="Metro" ColumnName="Metro" />
-          <ScalarProperty Name="Adres" ColumnName="Adres" />
-          <ScalarProperty Name="Cost" ColumnName="Cost" />
-          <ScalarProperty Name="City" ColumnName="City" />
-          <ScalarProperty Name="LivingSpace" ColumnName="LivingSpace" />
-          <ScalarProperty Name="TotalSpace" ColumnName="TotalSpace" />
-          <ScalarProperty Name="Floor" ColumnName="Floor" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Owners">
-      <EntityTypeMapping TypeName="AgenstvoModel.Owners">
-        <MappingFragment StoreEntitySet="Owners">
-          <ScalarProperty Name="ApartmentsPhoto" ColumnName="ApartmentsPhoto" />
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="Passport" ColumnName="Passport" />
-          <ScalarProperty Name="Login" ColumnName="Login" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="ApartmentsId" ColumnName="ApartmentsId" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Purchasers">
-      <EntityTypeMapping TypeName="AgenstvoModel.Purchasers">
-        <MappingFragment StoreEntitySet="Purchasers">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="Passport" ColumnName="Passport" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Login" ColumnName="Login" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="AgenstvoModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -84,5 +36,44 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище AgenstvoModel.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище AgenstvoModel.sp_upgraddiagrams" />
+    <EntitySetMapping Name="Apartments">
+      <EntityTypeMapping TypeName="AgenstvoModel.Apartments">
+        <MappingFragment StoreEntitySet="Apartments">
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="ApartmentsPhoto" ColumnName="ApartmentsPhoto" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="LivingSpace" ColumnName="LivingSpace" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="RoomsCount" ColumnName="RoomsCount" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Owners">
+      <EntityTypeMapping TypeName="AgenstvoModel.Owners">
+        <MappingFragment StoreEntitySet="Owners">
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchasers">
+      <EntityTypeMapping TypeName="AgenstvoModel.Purchasers">
+        <MappingFragment StoreEntitySet="Purchasers">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
