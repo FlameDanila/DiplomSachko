@@ -46,6 +46,7 @@ namespace SachkoKursovaya
                         {
                             App.name = NamesList[i];
                             App.login = LoginList[i];
+                            App.userId = NamesList.IndexOf(NamesList[i]) + 1;
                             MessageBox.Show("Авторизация прошла успешно");
                             Owner Owner = new Owner();
                             Owner.Show();
@@ -79,6 +80,7 @@ namespace SachkoKursovaya
                         {
                             App.name = NamesList[i];
                             App.login = LoginList[i];
+                            App.userId = NamesList.IndexOf(NamesList[i]) + 1;
                             MessageBox.Show("Авторизация прошла успешно");
                             Owner Owner = new Owner();
                             Owner.Show();

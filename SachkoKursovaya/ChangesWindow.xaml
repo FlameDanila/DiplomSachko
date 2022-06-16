@@ -8,9 +8,10 @@
         Title="Предложения" Height="720" Width="1280" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" WindowStartupLocation="CenterScreen" Icon="/icon.png">
     <Grid Background="#FF3F72AF">
         <Border Margin="0,180,0,0" CornerRadius="40" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFDBE2EF" BorderBrush="#FF0F78BB" BorderThickness="1" Width="1124" Height="468">
-            <Grid Width="1124" x:Name="grid" Height="418" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,49,0,0">
-                
-            </Grid>
+            <ScrollViewer Margin="0,24,0,27" VerticalScrollBarVisibility="Hidden">
+                <StackPanel Width="940" x:Name="grid" Height="auto" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="70,30,0,0">
+                </StackPanel>
+            </ScrollViewer>
         </Border>
         <Border Margin="0,29,0,0" CornerRadius="40" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFDBE2EF" BorderBrush="#FF0F78BB" BorderThickness="1" Width="1124" Height="132"/>
         <Image HorizontalAlignment="Left" Height="97" Margin="1063,46,0,0" VerticalAlignment="Top" Width="95" Source="/icon.png" Stretch="Fill" StretchDirection="Both" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>

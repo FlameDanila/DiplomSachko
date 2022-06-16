@@ -17,5 +17,6 @@ namespace SachkoKursovaya
         public static string name = "";
         public static string login = "";
         public static int userId = 0;
+        public static int appId = 0;
     }
 }
